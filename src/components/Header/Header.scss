@@ -1,17 +1,42 @@
+// $primary-color: #D8E054;
+
+// .fm-header-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   height: auto;
+
+//   .fm-header-logo {
+//     width: 500px;
+//   }
+
+//   .fm-header-span {
+//     padding: 8px 16px;
+//     height: auto;
+//     background: $primary-color;
+//     border-radius: 25px;
+//   }
+// }
+
+// Definir variables de estilo
 $primary-color: #D8E054;
 
-.fm-header-container {
+// Bloque principal
+.fm-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
 
-  .fm-header-logo {
+  // Elemento del bloque
+  &__logo {
     width: 500px;
   }
 
-  .fm-header-span {
+  // Elemento del bloque
+  &__span {
     padding: 8px 16px;
     height: auto;
     background: $primary-color;
