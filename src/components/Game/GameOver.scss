@@ -1,0 +1,24 @@
+// GameOver.scss
+.game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+}
