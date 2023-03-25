@@ -1,45 +1,23 @@
-// $primary-color: #D8E054;
+@import '../../styles/variables';
 
-// .fm-header-container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   height: auto;
-
-//   .fm-header-logo {
-//     width: 500px;
-//   }
-
-//   .fm-header-span {
-//     padding: 8px 16px;
-//     height: auto;
-//     background: $primary-color;
-//     border-radius: 25px;
-//   }
-// }
-
-// Definir variables de estilo
-$primary-color: #D8E054;
-
-// Bloque principal
 .fm-header {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  height: $header-height;
   justify-content: center;
-  align-items: center;
-  height: auto;
 
-  // Elemento del bloque
   &__logo {
-    width: 500px;
+    object-fit: cover;
+    width: 400px;
+
   }
 
-  // Elemento del bloque
   &__span {
-    padding: 8px 16px;
-    height: auto;
     background: $primary-color;
     border-radius: 25px;
+    font-weight: bold;
+    height: auto;
+    padding: 8px 16px;
   }
 }
