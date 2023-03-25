@@ -7,6 +7,7 @@ import './App.scss'
 
 const App: React.FC = () => {
   return (
+    // ApolloProvider is used to provide the GraphQL client to the app
     <ApolloProvider client={GraphQLClient}>
       <Router>
         <Routes>
