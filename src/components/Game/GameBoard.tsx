@@ -38,7 +38,7 @@ const GameBoard: React.FC<GameBoardProps> = ({ gameStarted, setGameStarted }) =>
     }
   }, [gameStarted, characters])
 
-  const handleCardClick = (id: string) => {
+  const handleCardClick = (id: string): void => {
     if (selectedCards.length < 2) {
       handleClickOnCard(
         characters,
@@ -65,7 +65,7 @@ const GameBoard: React.FC<GameBoardProps> = ({ gameStarted, setGameStarted }) =>
   }, [matches])
 
   // Función para reiniciar el juego
-  const resetGame = () => {
+  const resetGame = (): void => {
     setTurns(0)
     setMatches(0)
     const newCharacters = createCharacterList(data.charactersByIds)
