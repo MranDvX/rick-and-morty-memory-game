@@ -3,7 +3,7 @@ import GET_CHARACTERS from '../../clients/http'
 import { useQuery } from '@apollo/client'
 import CardList from '../Cards/CardList'
 import GameOver from './GameOver'
-import './gameBoard.scss'
+import './GameBoard.scss'
 
 interface GameBoardProps {
   gameStarted: boolean
@@ -72,13 +72,6 @@ const GameBoard: React.FC<GameBoardProps> = ({ gameStarted, setGameStarted }) =>
 
   return (
     <>
-    {/* <header>
-      <div className="game-info">
-        <div className="turns">Turnos: {turns}</div>
-        <div className="matches">Aciertos: {matches}</div>
-      </div>
-      </header> */}
-
       {gameOver
         ? (
           <GameOver
@@ -86,12 +79,12 @@ const GameBoard: React.FC<GameBoardProps> = ({ gameStarted, setGameStarted }) =>
             restartGame={() => {
               setGameStarted(false)
               setGameOver(false)
-              resetGame() // Llama a la función resetGame aquí
+              resetGame()
             }}
           />
           )
         : (
-            <section className='fm-game-container'>
+            <section className='fm-game-board-container'>
               <header>
               <div className="game-info">
                 <div className="turns">Turnos: {turns}</div>
@@ -152,8 +145,8 @@ const handleClickOnCard = async (
   setSelectedCards: any,
   turns: number,
   setTurns: any,
-  matches: number, // Agregar matches
-  setMatches: any // Agregar setMatches
+  matches: number,
+  setMatches: any
 ) => {
   const clickedCard = characters.find((char) => char.id === id)
   if (!clickedCard.flipped && selectedCards.length < 2) {
@@ -174,8 +167,8 @@ const handleClickOnCard = async (
             setCharacters,
             setSelectedCards,
             [...selectedCards, updatedCard],
-            matches, // Agregar matches
-            setMatches // Agregar setMatches
+            matches,
+            setMatches
           )
         },
         1000
@@ -189,8 +182,8 @@ const checkMatch = (
   setCharacters: any,
   setSelectedCards: any,
   selectedCards: any[],
-  matches: number, // Agregar matches
-  setMatches: any // Agregar setMatches
+  matches: number,
+  setMatches: any
 ) => {
   if (selectedCards[0].name === selectedCards[1].name) {
     const updatedCharacters = characters.map((char) => {
@@ -202,7 +195,7 @@ const checkMatch = (
     setTimeout(() => {
       setCharacters(updatedCharacters)
       setSelectedCards([])
-      setMatches(matches + 1) // Incrementar el contador de aciertos
+      setMatches(matches + 1)
     }, 1000)
   } else {
     const updatedCharacters = characters.map((char) => {

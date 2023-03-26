@@ -16,7 +16,7 @@ const GameOver: React.FC<GameOverProps> = ({
 
   return (
     <section className='fm-game-container'>
-      <header className="game-over">
+      <header className="fm-game-over">
         <h2>¡Felicidades!</h2>
       </header>
       <article>

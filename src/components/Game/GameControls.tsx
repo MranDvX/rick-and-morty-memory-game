@@ -1,18 +1,18 @@
 import React from 'react'
-import './gameControls.scss'
+import './GameControls.scss'
 
 interface GameControlsProps {
   gameStarted: boolean
   setGameStarted: React.Dispatch<React.SetStateAction<boolean>>
-  isGameOver: boolean // Añade esta propiedad
-  turns: number // Añade esta propiedad
+  isGameOver: boolean
+  turns: number
 }
 
 const GameControls: React.FC<GameControlsProps> = ({
   gameStarted,
   setGameStarted,
   isGameOver,
-  turns // Agregar turns aquí
+  turns
 }) => {
   const handleRestartClick = () => {
     setGameStarted(false)
@@ -20,7 +20,7 @@ const GameControls: React.FC<GameControlsProps> = ({
   }
 
   return (
-    <div className="game-controls">
+    <div className="fm-game-controls">
       {isGameOver && (
         <>
           <p>Juego terminado! Has completado el juego en {turns} turnos.</p>

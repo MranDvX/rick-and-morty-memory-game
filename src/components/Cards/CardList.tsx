@@ -1,7 +1,6 @@
-// CardList.tsx
 import React from 'react'
 import CharacterCard from '../Cards/CharacterCard'
-import './cardList.scss'
+import './CardList.scss'
 
 interface CardListProps {
   characters: any[]

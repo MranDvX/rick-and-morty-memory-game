@@ -1,5 +1,5 @@
 import React from 'react'
-import './characterCard.scss'
+import './CharacterCard.scss'
 
 interface CharacterCardProps {
   id: string
