@@ -96,17 +96,26 @@ const checkMatch = (
       setMatches(matches + 1)
     }, 1000)
   } else {
+    flipBackCards(characters, setCharacters, setSelectedCards, selectedCards)
+  }
+}
+
+export const flipBackCards = (
+  characters: any[],
+  setCharacters: any,
+  setSelectedCards: any,
+  selectedCards: any[]
+) => {
+  setTimeout(() => {
     const updatedCharacters = characters.map((char) => {
       if (selectedCards.some((selected) => selected.id === char.id)) {
         return { ...char, flipped: false }
       }
       return char
     })
-    setTimeout(() => {
-      setCharacters(updatedCharacters)
-      setSelectedCards([])
-    }, 1000)
-  }
+    setSelectedCards([])
+    setCharacters(updatedCharacters)
+  }, 1000)
 }
 
 const removeMatchedCards = (
@@ -117,19 +126,5 @@ const removeMatchedCards = (
   const updatedCharacters = characters.filter(
     (char) => !selectedCards.some((selected) => selected.id === char.id)
   )
-  setSelectedCards([])
-}
-
-const flipBackCards = (
-  characters: any[],
-  setSelectedCards: any,
-  selectedCards: any[]
-) => {
-  const updatedCharacters = characters.map((char) => {
-    if (selectedCards.some((selected) => selected.id === char.id)) {
-      return { ...char, flipped: false }
-    }
-    return char
-  })
   setSelectedCards([])
 }
