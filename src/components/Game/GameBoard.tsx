@@ -72,10 +72,13 @@ const GameBoard: React.FC<GameBoardProps> = ({ gameStarted, setGameStarted }) =>
 
   return (
     <>
+    {/* <header>
       <div className="game-info">
         <div className="turns">Turnos: {turns}</div>
         <div className="matches">Aciertos: {matches}</div>
       </div>
+      </header> */}
+
       {gameOver
         ? (
           <GameOver
@@ -88,7 +91,17 @@ const GameBoard: React.FC<GameBoardProps> = ({ gameStarted, setGameStarted }) =>
           />
           )
         : (
-        <CardList characters={characters} handleCardClick={handleCardClick} />
+            <section className='fm-game-container'>
+              <header>
+              <div className="game-info">
+                <div className="turns">Turnos: {turns}</div>
+                <div className="matches">Aciertos: {matches}</div>
+              </div>
+              </header>
+              <article>
+                <CardList characters={characters} handleCardClick={handleCardClick} />
+              </article>
+            </section>
           )}
     </>
   )

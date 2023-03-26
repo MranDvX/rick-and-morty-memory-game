@@ -15,27 +15,31 @@ const GameOver: React.FC<GameOverProps> = ({
   const navigate = useNavigate()
 
   return (
-    <div className="game-over">
-      <h2>¡Felicidades!</h2>
-      <p>
-        Has completado el juego en <strong>{turns}</strong> turnos.
-      </p>
-      <button
-        className="restart-game-button"
-        onClick={() => {
-          restartGame()
-          setGameStarted(true)
-        }}
-      >
-        Reiniciar
-      </button>
-      <button
-        className="go-home-button"
-        onClick={() => { navigate('/') }}
-      >
-        Inicio
-      </button>
-    </div>
+    <section className='fm-game-container'>
+      <header className="game-over">
+        <h2>¡Felicidades!</h2>
+      </header>
+      <article>
+        <p>
+          Has completado el juego en <strong>{turns}</strong> turnos.
+        </p>
+        <button
+          className="restart-game-button"
+          onClick={() => {
+            restartGame()
+            setGameStarted(true)
+          }}
+        >
+          Reiniciar
+        </button>
+        <button
+          className="go-home-button"
+          onClick={() => { navigate('/') }}
+        >
+          Inicio
+        </button>
+      </article>
+    </section>
   )
 }
 

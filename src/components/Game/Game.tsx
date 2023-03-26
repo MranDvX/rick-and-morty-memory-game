@@ -12,7 +12,7 @@ const Game: React.FC = () => {
   return (
     <>
       <Header />
-      <div className="fm-game-container">
+      {/* <div className="fm-game-container">
         <h1>Personajes</h1>
         <GameBoard gameStarted={gameStarted} setGameStarted={setGameStarted} />
         <GameControls
@@ -21,7 +21,16 @@ const Game: React.FC = () => {
           isGameOver={isGameOver}
           turns={turns}
         />
-      </div>
+      </div> */}
+      <main>
+        <GameBoard gameStarted={gameStarted} setGameStarted={setGameStarted} />
+          <GameControls
+        gameStarted={gameStarted}
+        setGameStarted={setGameStarted}
+        isGameOver={isGameOver}
+        turns={turns}
+          />
+      </main>
     </>
   )
 }
