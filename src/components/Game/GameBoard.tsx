@@ -38,9 +38,9 @@ const GameBoard: React.FC<GameBoardProps> = ({ gameStarted, setGameStarted }) =>
     }
   }, [gameStarted, characters])
 
-  const handleCardClick = (id: string): void => {
+  const handleCardClick = async (id: string): Promise<void> => {
     if (selectedCards.length < 2) {
-      handleClickOnCard(
+      await handleClickOnCard(
         characters,
         setCharacters,
         id,
