@@ -11,6 +11,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: calc(100px * 4 + 30px * 3 * 2); // 3 tarjetas, cada una de 100px de ancho, y 10px de margen a ambos lados
-  margin: 0 auto; // Centra el contenedor principal en la página
+  width: calc(100px * 4 + 30px * 3 * 2);
+  margin: 0 auto;
 }
